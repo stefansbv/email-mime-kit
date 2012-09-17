@@ -38,7 +38,7 @@ my $kit = Email::MIME::Kit->new({
 
 {
   my $email = $kit->assemble({
-    friend   => TestFriend->new('Jÿmbo Jºhnsøn'),
+    friend   => TestFriend->new('Jÿmbo Jºhnşøn'),
     how_long => '10 years',
   });
 
