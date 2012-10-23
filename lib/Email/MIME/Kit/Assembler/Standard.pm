@@ -73,7 +73,13 @@ sub _assemble_from_string {
   # 2009-01-19
   $body .= "\x0d\x0a" unless $body =~ /[\x0d|\x0a]\z/;
 
-  my $body_ref = $self->render(\$body, $stash);
+  my $body_ref;
+  if ( $stash->{norender} ) {
+      $body_ref = \$body;
+  }
+  else {
+      $body_ref = $self->render(\$body, $stash);
+  }
 
   my %attr = %{ $self->manifest->{attributes} || {} };
   $attr{content_type} = $attr{content_type} || 'text/plain';
@@ -289,7 +295,8 @@ sub _contain_attachments {
     parts      => $arg->{parts},
   );
 
-  my @att_parts = map { $_->assemble($arg->{stash}) } @attachments;
+  $arg->{stash}{norender} = 1;
+  my @att_parts = map { $_->assemble($arg->{stash} ) } @attachments;
 
   my $container = Email::MIME->create(
     attributes => { content_type => ($ct || 'multipart/mixed') },
