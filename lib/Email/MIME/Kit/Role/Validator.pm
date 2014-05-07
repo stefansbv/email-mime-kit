@@ -1,4 +1,5 @@
 package Email::MIME::Kit::Role::Validator;
+
 use Moose::Role;
 # ABSTRACT: things that validate assembly parameters
 

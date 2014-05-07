@@ -1,4 +1,5 @@
 package Email::MIME::Kit::KitReader::Dir;
+
 use Moose;
 with 'Email::MIME::Kit::Role::KitReader';
 # ABSTRACT: read kit entries out of a directory

@@ -1,4 +1,5 @@
 package Email::MIME::Kit::Renderer::TestRenderer;
+
 use Moose;
 with 'Email::MIME::Kit::Role::Renderer';
 # ABSTRACT:  extremely simple renderer for testing purposes only

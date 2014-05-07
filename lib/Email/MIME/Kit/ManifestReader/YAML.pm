@@ -1,4 +1,5 @@
 package Email::MIME::Kit::ManifestReader::YAML;
+
 use Moose;
 # ABSTRACT: read manifest.yaml files
 

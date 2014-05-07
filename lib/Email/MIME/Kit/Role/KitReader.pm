@@ -1,4 +1,5 @@
 package Email::MIME::Kit::Role::KitReader;
+
 use Moose::Role;
 with 'Email::MIME::Kit::Role::Component';
 # ABSTRACT: things that can read kit contents
